@@ -1,0 +1,20 @@
+﻿<Window x:Class="KitchenApp.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:KitchenApp"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <Label Content="Kitchen App" HorizontalAlignment="Center" Margin="0,24,0,0" VerticalAlignment="Top" FontSize="32"/>
+        <ListBox x:Name="showList" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="480,84,26,25" FontSize="16"/>
+        <ComboBox x:Name="ingridientBox" HorizontalAlignment="Left" Margin="30,84,0,0" VerticalAlignment="Top" Width="150" FontSize="18" Height="30" SelectionChanged="ingridientBox_SelectionChanged"/>
+        <ListBox x:Name="ingridientList" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="220,84,375,113" FontSize="14"/>
+        <TextBox x:Name="nameBox" HorizontalAlignment="Left" Margin="30,171,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="150" Height="32" FontSize="16"/>
+        <Button Content="Add new" HorizontalAlignment="Left" Margin="30,247,0,0" VerticalAlignment="Top" Width="150" Height="27" Click="AddButton_Click"/>
+        <Button Content="Add to sandvich" HorizontalAlignment="Left" Margin="30,294,0,0" VerticalAlignment="Top" Width="150" Height="27"/>
+        <Button Content="Create new sandwich" HorizontalAlignment="Left" Margin="30,354,0,0" VerticalAlignment="Top" Width="395" Height="40" FontSize="20" Click="Button_Click"/>
+
+    </Grid>
+</Window>

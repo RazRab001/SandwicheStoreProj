@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.6.33829.357
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SandwicheStoreProj", "SandwicheStoreProj\SandwicheStoreProj.csproj", "{D3F06329-AB17-4AD9-9BBE-3783079C4B17}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KitchenApp", "KitchenApp\KitchenApp.csproj", "{BFBB4147-EA93-4BD9-BFF1-1AD68D207150}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D3F06329-AB17-4AD9-9BBE-3783079C4B17}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D3F06329-AB17-4AD9-9BBE-3783079C4B17}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D3F06329-AB17-4AD9-9BBE-3783079C4B17}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D3F06329-AB17-4AD9-9BBE-3783079C4B17}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BFBB4147-EA93-4BD9-BFF1-1AD68D207150}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BFBB4147-EA93-4BD9-BFF1-1AD68D207150}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BFBB4147-EA93-4BD9-BFF1-1AD68D207150}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BFBB4147-EA93-4BD9-BFF1-1AD68D207150}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {FCB25D18-32C0-4144-B077-8410C08AC47D}
+	EndGlobalSection
+EndGlobal

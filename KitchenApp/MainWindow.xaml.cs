@@ -33,17 +33,23 @@ namespace KitchenApp
             InitializeComponent();
             ingridientBox.ItemsSource = Enum.GetValues(typeof(Ingrid));
 
-            showList.ItemsSource = first.sandviches.GetCatalog();
+            foreach(Sandvich s in first.sandviches.GetCatalog())
+            {
+                showList.Items.Add(s);
+            }
         }
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             if (!string.IsNullOrEmpty(nameBox.Text))
             {
                 first.createNewSandvich(nameBox.Text);
-                showList.ItemsSource = first.sandviches.GetCatalog();
+                showList.Items.Clear();
+                foreach (Sandvich s in first.sandviches.GetCatalog())
+                {
+                    showList.Items.Add(s);
+                }
             }
         }
-
         private void ingridientBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             if (ingridientBox.SelectedItem != null)
@@ -52,7 +58,9 @@ namespace KitchenApp
                 if (actual == Ingrid.Bread)
                 {
                     ingridientList.Items.Clear();
-                    foreach (Bread b in first.breads.GetCatalog())
+                    List<Bread> list1 = first.breads.GetCatalog();
+                    list1.Sort(new SortByName());
+                    foreach (Bread b in list1)
                     {
                         ingridientList.Items.Add(b);
                     }
@@ -60,7 +68,9 @@ namespace KitchenApp
                 else if (actual == Ingrid.Ingridient)
                 {
                     ingridientList.Items.Clear();
-                    foreach (Ingridient i in first.ingridients.GetCatalog())
+                    List<Ingridient> list2 = first.ingridients.GetCatalog();
+                    list2.Sort(new SortByName());
+                    foreach (Ingridient i in list2)
                     {
                         ingridientList.Items.Add(i);
                     }
@@ -74,7 +84,9 @@ namespace KitchenApp
             {
                 Bread bread = Bread.Create(first, nameBox.Text);
                 ingridientList.Items.Clear();
-                foreach (Bread b in first.breads.GetCatalog())
+                List<Bread> list1 = first.breads.GetCatalog();
+                list1.Sort(new SortByName());
+                foreach (Bread b in list1)
                 {
                     ingridientList.Items.Add(b);
                 }
@@ -83,11 +95,29 @@ namespace KitchenApp
             {
                 Ingridient ingridient = Ingridient.Create(first, nameBox.Text);
                 ingridientList.Items.Clear();
-                foreach (Ingridient i in first.ingridients.GetCatalog())
+                List<Ingridient> list2 = first.ingridients.GetCatalog();
+                list2.Sort(new SortByName());
+                foreach (Ingridient i in list2)
                 {
                     ingridientList.Items.Add(i);
                 }
             }
         }
+        private void AddToButton_Click(object sender, RoutedEventArgs e)
+        {
+            string item = ingridientList.Items[ingridientList.SelectedIndex].ToString();
+            if (actual == Ingrid.Bread)
+            {
+                first.addBreadToSandvich(item);
+                showList.Items.Clear();
+                showList.Items.Add(item);
+            }
+            else if (actual == Ingrid.Ingridient)
+            {
+                first.addIngridientToSandvich(item);
+                showList.Items.Add(item);
+            }
+        }
+
     }
 }

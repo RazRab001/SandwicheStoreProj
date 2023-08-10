@@ -13,7 +13,7 @@
         <ListBox x:Name="ingridientList" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="220,84,375,113" FontSize="14"/>
         <TextBox x:Name="nameBox" HorizontalAlignment="Left" Margin="30,171,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="150" Height="32" FontSize="16"/>
         <Button Content="Add new" HorizontalAlignment="Left" Margin="30,247,0,0" VerticalAlignment="Top" Width="150" Height="27" Click="AddButton_Click"/>
-        <Button Content="Add to sandvich" HorizontalAlignment="Left" Margin="30,294,0,0" VerticalAlignment="Top" Width="150" Height="27"/>
+        <Button Content="Add to sandvich" HorizontalAlignment="Left" Margin="30,294,0,0" VerticalAlignment="Top" Width="150" Height="27" Click="AddToButton_Click"/>
         <Button Content="Create new sandwich" HorizontalAlignment="Left" Margin="30,354,0,0" VerticalAlignment="Top" Width="395" Height="40" FontSize="20" Click="Button_Click"/>
 
     </Grid>
